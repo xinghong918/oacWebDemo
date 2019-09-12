@@ -22,7 +22,7 @@
     ![](images/guide/Guide_04.png)
     ![](images/guide/Guide_05.png)
 
-3. **If you want to share your report with others, make sure they have granted the role(Service Viewer) to your OAC instance**
+3. **If you want to share your report with others, make sure they have granted the role(Service Viewer) to your OAC service instance**
     ![](images/guide/Guide_07.png)
 
 4. **For advanced user, you can also customize the css layout if you want by editing the "Custom CSS" part and then save to apply the new layout**
