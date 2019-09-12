@@ -89,6 +89,7 @@
                 })
                 .fail(function (jqxhr, settings, exception) {
                     console.error("Triggered ajaxError handler.");
+                    window.open(dataJson.jsUrl, '_blank');
                 });
         }
 
