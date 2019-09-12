@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap//bootstrap.min.css">
+    <script src="js/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap/bootstrap.min.js" crossorigin="anonymous"></script>
+    <title>OAC Demo Config</title>
+</head>
+
+<body>
+
+    <div class="container" style="max-width:90%">
+        <div class="d-flex">
+            <div>
+                <h3>OAC Demo Configuration</h3>
+            </div>
+            <div class="p-2">
+                <a href="README.md" target="_blank">Help Guide - README.md</a>
+            </div>
+            <div class="ml-auto p-2">
+                <span class="glyphicon glyphicon-new-window"></span>
+                <button id="goBTN" type="go" class="btn btn-primary"> <strong> Live Demo </strong></button>
+            </div>
+        </div>
+        <div class="d-flex ">
+            <div class="col-8">
+                <label for="jsonText">OAC report</label>
+                <textarea rows="32" class="form-control" id="jsonText"></textarea>
+            </div>
+            <div class="col-4">
+                <label for="cssText">Custom CSS</label>
+                <textarea rows="32" class="form-control" id="cssText"></textarea>
+            </div>
+        </div>
+        <div id="btnSet" class="d-flex">
+            <div class="p-2">
+                <button id="resetBTN" type="reset" class="btn btn-secondary">Reset</button>
+            </div>
+            <div class="ml-auto p-2">
+                <button id="saveBTN" type="save" class="btn btn-success">Save</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        var lsItemName = "sehub_oac_demo", cssItemName = "sehub_oac_css";
+
+
+        var init = function () {
+            $("#btnSet").removeClass("d-flex").addClass("d-none");
+            if (typeof (Storage) !== "undefined") {
+                var jsonData = localStorage.getItem(lsItemName);
+                if (!jsonData) {
+                    $.getJSON('oac.json', function (data) {
+                        console.log(data);
+                        $('#jsonText').val(JSON.stringify(data, null, 2));
+                        var cssStorageData = localStorage.getItem(cssItemName);
+                        if (!cssStorageData) {
+                            $.get("css/oac_cust_example.css", function (cssData) {
+                                $('#cssText').val(cssData);
+                                $("#btnSet").removeClass("d-none").addClass("d-flex");
+                            });
+                        }
+                        else {
+                            $('#cssText').val(cssStorageData);
+                            $("#btnSet").removeClass("d-none").addClass("d-flex");
+                        }
+                    });
+                } else {
+                    let jsonObj = JSON.parse(jsonData);
+                    $('#jsonText').val(JSON.stringify(jsonObj, null, 2));
+
+                    var cssStorageData = localStorage.getItem(cssItemName);
+                    if (!cssStorageData) {
+                        $.get("css/oac_cust_example.css", function (cssData) {
+                            $('#cssText').val(cssData);
+                            $("#btnSet").removeClass("d-none").addClass("d-flex");
+                        });
+                    }
+                    else {
+                        $('#cssText').val(cssStorageData);
+                        $("#btnSet").removeClass("d-none").addClass("d-flex");
+                    }
+                }
+
+            } else {
+                alert("Sorry, your browser does not support Web Storage...");
+            }
+        };
+        init();
+
+
+        $("#saveBTN").click(function () {
+            if (confirm("Are you sure to save as new OAC data as showing above?")) {
+                let jsonObj = JSON.parse($("#jsonText").val());
+
+                localStorage.setItem(lsItemName, JSON.stringify(jsonObj, null, 2));
+                localStorage.setItem(cssItemName, $('#cssText').val());
+                alert("Save successfully!");
+                init();
+            }
+
+        });
+
+        $("#resetBTN").click(function () {
+            if (confirm("Reset will rewrite the existing value above. Are you sure to reset to the default OAC Demo?")) {
+                localStorage.clear();
+                init();
+            }
+        });
+
+        $("#goBTN").click(function () {
+            window.open('oac.html', '_blank');
+        });
+
+
+    </script>
+</body>
+
+</html>
