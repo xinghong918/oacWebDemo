@@ -18,11 +18,11 @@
     The default settings are from [oac.json](oac.json) file
     
     **Embedding js url & project-path & active-tab-id are mandatory**. You can get them from OAC _(check the screenshots below)_.
-    ![](images/guide/Guide_03.png)
+        ![](images/guide/Guide_03.png)
     
     You can get the info from OAC:
-    ![](images/guide/Guide_04.png)
-    ![](images/guide/Guide_05.png)
+        ![](images/guide/Guide_04.png)
+        ![](images/guide/Guide_05.png)
 
 -------------
 3. **If you want to share your report with others, make sure they have granted the role(Service Viewer) to your OAC service instance**
