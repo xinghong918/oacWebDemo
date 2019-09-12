@@ -25,6 +25,9 @@
 3. **If you want to share your report with others, make sure they have granted the role(Service Viewer) to your OAC service instance**
     ![](images/guide/Guide_07.png)
 
+
+
+
 4. **For advanced user, you can also customize the css layout if you want by editing the "Custom CSS" part and then save to apply the new layout**
     ![](images/guide/Guide_06.png)
 
