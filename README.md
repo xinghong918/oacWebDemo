@@ -1,10 +1,10 @@
  
  # OAC Web Demo
  ### This is a reuse framework for Embedded OAC Web Application
-    >This demo doesn't integrate with IDCS, you need to login first and then manually refresh the [oac.html](oac.html). But if you want to share with others, you may need to 
+>This demo doesn't integrate with IDCS, you need to login first and then manually refresh the [oac.html](oac.html). But if you want to share with others, you may need to 
 
 ### You can go ahead to the [Live Demo](oac.html) directly.
-    ![](images/cover.jpg)
+![](images/cover.jpg)
 
 ### Or you can customize it to your OAC report canvas. Just 2 steps for your OAC report to be a web application enablement.
 
