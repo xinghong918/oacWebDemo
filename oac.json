@@ -29,11 +29,5 @@
             "carouselActive": ""
         }
     ],
-    "idcs": {
-        "enable": false,
-        "IDCS_URL": "https://idcs-....identity.oraclecloud.com",
-        "IDCS_CLIENT_ID": "c73b77b87431494284c9bb26ecca8aa0",
-        "IDCS_CLIENT_SECRET": "3144847a-ad70-46ae-b23f-424c51a7291a"
-    },
     "version": "1.0"
 }
