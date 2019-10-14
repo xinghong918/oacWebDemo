@@ -23,7 +23,7 @@
             "id": 3,
             "projectPath": "/shared/cathy/CathyTest",
             "activeTabID": "3",
-            "dvClass": "",
+            "dvClass": "newStyle",
             "bgImage": "images/slider-3.jpg",
             "bgImageStyle": "background-color: lightgrey;",
             "carouselActive": ""

@@ -1,61 +1,63 @@
 /* Custom layout begin */
-.myBlack .bitech-stretchbox {
+.newStyle .bitech-stretchbox {
     background-color: black!important;
 }
 
-.myBlack .bitech-stretchbox div {
+.newStyle .bitech-stretchbox div {
     background: none;
 }
 
-.myBlack .bitech-report-toolbar-container {
+.newStyle .bitech-report-toolbar-container {
     background-color: rgba(21, 48, 135, 0.85) !important;
 }
 
-.myBlack .bi_filterbar_filterscontainer_clip_div {
+.newStyle .bi_filterbar_filterscontainer_clip_div {
     overflow: hidden;
 }
 
-.myBlack .bitech-report-view-only-mode .bi_filterbar_tile:hover .bi_filterbar_tile_heading,
-.myBlack .bitech-report-presentation-mode .bi_filterbar_tile:hover .bi_filterbar_tile_heading {
+.newStyle .bitech-report-view-only-mode .bi_filterbar_tile:hover .bi_filterbar_tile_heading,
+.newStyle .bitech-report-presentation-mode .bi_filterbar_tile:hover .bi_filterbar_tile_heading {
     color: lightyellow;
 }
 
-.myBlack .bitech-report-toolbar-container .bi_filterbar_tile_body {
+.newStyle .bitech-report-toolbar-container .bi_filterbar_tile_body {
     color: lightgrey;
 }
 
-.myBlack .bitech-layout-content text {
+.newStyle .bitech-layout-content text {
     fill: white;
 }
 
-.myBlack text[dominant-baseline="text-before-edge"],
-.myBlack text[dominant-baseline="middle"] {
+.newStyle text[dominant-baseline="text-before-edge"],
+.newStyle text[dominant-baseline="middle"] {
     fill: rgba(255, 255, 255, 0.9);
 }
 
-.myBlack .bitech-report-toolbar-container .bi_filterbar_tile_heading,
-.myBlack .bitech-layout-content label,
-.myBlack .bi_filterbar_tile span {
+.newStyle .bitech-report-toolbar-container .bi_filterbar_tile_heading,
+.newStyle .bitech-layout-content label,
+.newStyle .bi_filterbar_tile span,
+.newStyle .oj-datagrid-cell,
+.newStyle div.oj-datagrid-cell.bi_viz_gridview_data_cell.bi_viz_gridview_data_cell_total, .bi_viz_gridview_data_cell.bi_viz_gridview_data_cell_total {
     color: white;
 }
 
-.myBlack .oj-datagrid-header-label,
-.myBlack .oj-datagrid-header-cell,
-.myBlack .oj-datagrid-end-header-cell {
+.newStyle .oj-datagrid-header-label,
+.newStyle .oj-datagrid-header-cell,
+.newStyle .oj-datagrid-end-header-cell {
     color: rgba(255, 255, 255, 0.85) !important;
 }
 
-.myBlack .bi_vizshelloutercontainer {
+.newStyle .bi_vizshelloutercontainer {
     border: 1px solid white !important;
     border-radius: 12px !important;
     background-color: rgba(21, 49, 83, .85) !important;
 }
 
-.myBlack .bi_loadingContainer {
+.newStyle .bi_loadingContainer {
     background-color: transparent;
 }
 
-.myBlack .bi_loadingMsgContainer {
+.newStyle .bi_loadingMsgContainer {
     border-radius: 100%;
     width: 130px;
     height: 130px;

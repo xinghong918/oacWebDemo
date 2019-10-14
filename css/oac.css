@@ -60,7 +60,9 @@ body {
 
 .myStyle .bitech-report-toolbar-container .bi_filterbar_tile_heading,
 .myStyle .bitech-layout-content label,
-.myStyle .bi_filterbar_tile span {
+.myStyle .bi_filterbar_tile span,
+.myStyle .oj-datagrid-cell,
+.myStyle div.oj-datagrid-cell.bi_viz_gridview_data_cell.bi_viz_gridview_data_cell_total, .bi_viz_gridview_data_cell.bi_viz_gridview_data_cell_total {
     color: white;
 }
 
