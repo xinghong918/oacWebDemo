@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
     <h3 style="color:darkred;">OAC Demo</h3>
-    <object height="700px" width="100%" data="oac.html" width="500px" height="500px"></object>
+    <iframe id="oacFrame" style="border:none;" height="700px" width="100%" src="oac.html" width="500px" height="500px" onload="init();"></iframe>
 
     <!-- <iframe height="800px" width="100%" style="border:none;"
         src="https://cathyoac3-sehubjapacprod-ic.analytics.ocp.oraclecloud.com/ui/dv/ui/project.jsp?pageid=visualAnalyzer&reportmode=presentation&reportpath=/@Catalog/users/hong.xing@oracle.com/Sample Project">
     </iframe> -->
+
+    <script type="text/javascript">
+        function init(){
+            let jsUrl = "https://cathyoac3-sehubjapacprod-ic.analytics.ocp.oraclecloud.com/static/dv/embedding/v1/standalone/embedding.js";
+            let htmlStr = '<oracle-dv id="oracle-dv-1"  project-path="/@Catalog/users/hong.xing@oracle.com/Sample Project" active-page="canvas" active-tab-id="1"></oracle-dv>';
+            document.getElementById("oacFrame").contentWindow.updateHTML(jsUrl, htmlStr);
+        }
+    </script>
 </body>
 </html>

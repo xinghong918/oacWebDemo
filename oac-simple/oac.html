@@ -5,30 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
 
     <title>OAC Demo</title>
-    <script src="https://cathyoac3-sehubjapacprod-ic.analytics.ocp.oraclecloud.com/static/dv/embedding/v1/standalone/embedding.js" type="application/javascript"></script>
-    <!-- <script src="https://cathyoac-sehubjapacprod-ic.analytics.ocp.oraclecloud.com/static/dv/embedding/v1/standalone/embedding.js" type="application/javascript"></script> -->
+    <!-- <script src="https://cathyoac3-sehubjapacprod-ic.analytics.ocp.oraclecloud.com/static/dv/embedding/v1/standalone/embedding.js"
+        type="application/javascript"></script> -->
 
 </head>
 
 <body>
-    <div style="height:100vh;">
-        <oracle-dv id="oracle-dv-1"  project-path="/@Catalog/users/hong.xing@oracle.com/Sample Project" active-page="canvas" active-tab-id="1"></oracle-dv>
+    <div id="dv-div-1" style="height:100vh;">
+        <!-- <oracle-dv id="oracle-dv-1"  project-path="/@Catalog/users/hong.xing@oracle.com/Sample Project" active-page="canvas" active-tab-id="1"></oracle-dv> -->
     </div>
 
 
+    <script type="text/javascript">
+        function updateHTML(jsUrl, htmlStr) {
+            document.getElementById("dv-div-1").innerHTML = htmlStr;
 
-    <script>
-        requirejs(['knockout', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojcomposite', 'jet-composites/oracle-dv/loader'], function (ko) {
-            function MyProject() {
-                var self = this;
-                // self.projectPath = ko.observableArray(["/shared/cathy/CathyTest", "/shared/cathy/CathyTest"]);
-                self.oacCfgData = ko.observableArray();
-            }
-            //ko.applyBindings(MyProject, document.getElementById('oracle-dv-1'));
-            ko.applyBindings();
-        });
+            $.getScript(jsUrl)
+                .done(function (script, textStatus) {
+                    console.log(textStatus);
+                    try {
+                            requirejs(['knockout', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojcomposite', 'jet-composites/oracle-dv/loader'], function (ko) {
+                                function MyProject() {
+                                    var self = this;
+                                    // self.projectPath = ko.observableArray(["/shared/cathy/CathyTest", "/shared/cathy/CathyTest"]);
+                                    self.oacCfgData = ko.observableArray();
+                                }
+                                //ko.applyBindings(MyProject, document.getElementById('oracle-dv-1'));
+                                ko.applyBindings();
+                            });
+                    } catch (err) {
+                        console.error("Fail to load require.js: " + err.message);
+                        window.open(jsUrl, '_blank');
+                    }
+                })
+                .fail(function (jqxhr, settings, exception) {
+                    console.error("Triggered ajaxError handler.");
+                    window.open(jsUrl, '_blank');
+                });
+
+        }
+
+        // updateHTML('https://cathyoac3-sehubjapacprod-ic.analytics.ocp.oraclecloud.com/static/dv/embedding/v1/standalone/embedding.js',
+        //            '<oracle-dv id="oracle-dv-1"  project-path="/@Catalog/users/hong.xing@oracle.com/Sample Project" active-page="canvas" active-tab-id="1"></oracle-dv>');
 
     </script>
 </body>
